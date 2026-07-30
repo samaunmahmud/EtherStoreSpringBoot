@@ -10,7 +10,7 @@ public class EtherStoreApplication {
 
 //        SpringApplication.run(EtherStoreApplication.class, args);
 
-        var orderService = new OrderService(new StripePaymentService());
+        var orderService = new OrderService(new PayPalPaymentService());
         orderService.placeOrder();
     }
 
