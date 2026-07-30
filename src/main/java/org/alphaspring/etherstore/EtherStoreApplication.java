@@ -8,7 +8,10 @@ public class EtherStoreApplication {
 
     public static void main(String[] args) {
 
-        SpringApplication.run(EtherStoreApplication.class, args);
+//        SpringApplication.run(EtherStoreApplication.class, args);
+
+        var orderService = new OrderService(new StripePaymentService());
+        orderService.placeOrder();
     }
 
 }
