@@ -3,7 +3,7 @@ package org.alphaspring.etherstore;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
-@Service
+@Service("Stripe")
 @Primary
 public class StripePaymentService implements PaymentService {
 

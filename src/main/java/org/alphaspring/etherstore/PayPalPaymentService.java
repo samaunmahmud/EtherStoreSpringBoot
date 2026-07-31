@@ -2,7 +2,7 @@ package org.alphaspring.etherstore;
 
 import org.springframework.stereotype.Service;
 
-@Service
+@Service("Paypal")
 public class PayPalPaymentService implements PaymentService {
     @Override
     public void processPayment(double amount){
