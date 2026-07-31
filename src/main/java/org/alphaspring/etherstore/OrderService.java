@@ -15,9 +15,9 @@ public class OrderService {
 //
 //    public OrderService(PaymentService paymentService, int x){}
 
-    @Autowired
 
-    public OrderService(@Qualifier("Stripe") PaymentService paymentService){
+
+    public OrderService(PaymentService paymentService){
         this.paymentService = paymentService;
 
     }
