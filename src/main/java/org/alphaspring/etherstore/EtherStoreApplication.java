@@ -21,15 +21,18 @@ public class EtherStoreApplication {
 //        orderService.placeOrder();
 
 
-        Scanner input = new Scanner(System.in);
-        String message = "";
-        System.out.println("Enter the message: ");
-        message = input.nextLine();
-        var notificationManager = context.getBean(NotificatonManager.class);
+//        Scanner input = new Scanner(System.in);
+//        String message = "";
+//        System.out.println("Enter the message: ");
+//        message = input.nextLine();
+//        var notificationManager = context.getBean(NotificatonManager.class);
+//
+//
+//
+//        notificationManager.sendNotification(message);
 
-
-
-        notificationManager.sendNotification(message);
+        var orderService = context.getBean(OrderService.class);
+        orderService.placeOrder();
     }
 
 }
