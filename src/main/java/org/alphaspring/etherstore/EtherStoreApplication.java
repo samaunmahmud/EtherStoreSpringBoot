@@ -12,6 +12,8 @@ public class EtherStoreApplication {
     public static void main(String[] args) {
 
         ApplicationContext context = SpringApplication.run(EtherStoreApplication.class, args);
+
+        context.getBean(HeavyResource.class);
 //        var orderService = context.getBean(OrderService.class);
 
 //        var orderService = new OrderService(new PayPalPaymentService());
@@ -32,7 +34,7 @@ public class EtherStoreApplication {
 //        notificationManager.sendNotification(message);
 
         var orderService = context.getBean(OrderService.class);
-        orderService.placeOrder();
+        orderService.placeOrder(); // we called it here
     }
 
 }
