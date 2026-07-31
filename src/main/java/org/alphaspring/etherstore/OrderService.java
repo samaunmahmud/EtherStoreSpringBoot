@@ -8,9 +8,11 @@ import org.springframework.stereotype.Service;
 public class OrderService {
     private PaymentService paymentService;
 
-    public OrderService(){
-
-    }
+//    public OrderService(){
+//
+//    }
+//
+//    public OrderService(PaymentService paymentService, int x){}
 
     @Autowired
 
