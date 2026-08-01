@@ -1,5 +1,6 @@
 package org.alphaspring.etherstore;
 
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -12,10 +13,10 @@ public class EtherStoreApplication {
 
     public static void main(String[] args) {
 
-        ConfigurableApplicationContext context = SpringApplication.run(EtherStoreApplication.class, args);
+        ApplicationContext context = SpringApplication.run(EtherStoreApplication.class, args);
 
 
-        context.getBean(HeavyResource.class);
+//        context.getBean(HeavyResource.class);
 //        var orderService = context.getBean(OrderService.class);
 
 //        var orderService = new OrderService(new PayPalPaymentService());
@@ -35,10 +36,14 @@ public class EtherStoreApplication {
 //
 //        notificationManager.sendNotification(message);
 
-        var orderService = context.getBean(OrderService.class);
-        orderService.placeOrder(); // we called it here
+//        var orderService = context.getBean(OrderService.class);
+//        orderService.placeOrder(); // we called it here
+//
+//        context.close();
+        var userService = context.getBean(UserService.class);
+        userService.registerUser(new User(100,"samaun@gmail.com","3343","Sam"));
+        userService.registerUser(new User(100,"samaun@gmail.com","3343","Sam"));
 
-        context.close();
 
     }
 }

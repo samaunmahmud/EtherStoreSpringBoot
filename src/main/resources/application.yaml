@@ -10,3 +10,9 @@ stripe:
 
 
 payment-gateway: PayPal
+
+
+
+mail:
+  host: https://spring_boot.gmail.com
+  port: 5761
