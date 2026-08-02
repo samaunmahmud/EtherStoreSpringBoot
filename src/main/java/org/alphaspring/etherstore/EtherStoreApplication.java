@@ -1,6 +1,7 @@
 package org.alphaspring.etherstore;
 
 
+import org.alphaspring.etherstore.entities.Address;
 import org.alphaspring.etherstore.entities.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -26,6 +27,19 @@ public class EtherStoreApplication {
 //                .password("jhah4onsia")
 //                .email("samaun@gmail.com")
 //                .build();
+
+
+        var address = Address.builder()
+                .street("street")
+                .city("city")
+                .state("state")
+                .zip("zip")
+                .build();
+
+        user.addAddress(address);
+
+        System.out.println(user);
+
 
 
 

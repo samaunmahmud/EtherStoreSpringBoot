@@ -2,12 +2,14 @@ package org.alphaspring.etherstore.entities;
 
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.stereotype.Component;
-
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Setter
 @Getter
+@ToString
 @Entity
 @Table(name = "addresses")
 public class Address {
@@ -25,6 +27,11 @@ public class Address {
     private String zip;
     @Column( name = "state")
     private String state;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    @ToString.Exclude
+    private User user;
 
 
 }
