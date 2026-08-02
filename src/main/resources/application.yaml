@@ -1,5 +1,14 @@
 spring:
-  application.name: EtherStore
+  application:
+    name: EtherStore
+  datasource:
+    url: jdbc:mysql://localhost:3307/store?createDatabaseIfNotExist=true
+    username: root
+    password: root
+  flyway:
+    baseline-on-migrate: true
+
+
 
 
 stripe:
@@ -15,4 +24,4 @@ payment-gateway: PayPal
 
 mail:
   host: https://spring_boot.gmail.com
-  port: 5761
+  port: 3307

@@ -40,9 +40,9 @@ public class EtherStoreApplication {
 //        orderService.placeOrder(); // we called it here
 //
 //        context.close();
-        var userService = context.getBean(UserService.class);
-        userService.registerUser(new User(100,"samaun@gmail.com","3343","Sam"));
-        userService.registerUser(new User(100,"samaun@gmail.com","3343","Sam"));
+//        var userService = context.getBean(UserService.class);
+//        userService.registerUser(new User(100,"samaun@gmail.com","3343","Sam"));
+//        userService.registerUser(new User(100,"samaun@gmail.com","3343","Sam"));
 
 
     }
