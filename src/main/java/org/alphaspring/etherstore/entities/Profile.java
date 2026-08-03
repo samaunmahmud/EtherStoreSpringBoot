@@ -1,8 +1,8 @@
 package org.alphaspring.etherstore.entities;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import org.springframework.boot.webmvc.autoconfigure.WebMvcProperties;
 
 import java.time.LocalDate;
 
@@ -10,6 +10,10 @@ import java.time.LocalDate;
 @Getter
 @Table(name = "profiles")
 @Entity
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 public class Profile {
 
     @Id
@@ -26,4 +30,13 @@ public class Profile {
     private LocalDate dateOfBirth;
     @Column(name ="loyalty_points")
     private Integer loyaltyPoints;
+
+
+
+    @OneToOne
+    @JoinColumn(name = "id")
+    @MapsId
+    @ToString.Exclude
+    private User user;
+
 }

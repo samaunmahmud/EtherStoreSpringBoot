@@ -2,6 +2,8 @@ package org.alphaspring.etherstore;
 
 
 import org.alphaspring.etherstore.entities.Address;
+import org.alphaspring.etherstore.entities.Profile;
+import org.alphaspring.etherstore.entities.Tag;
 import org.alphaspring.etherstore.entities.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -29,14 +31,22 @@ public class EtherStoreApplication {
 //                .build();
 
 
-        var address = Address.builder()
-                .street("street")
-                .city("city")
-                .state("state")
-                .zip("zip")
-                .build();
+        user.addTag("tag1");
 
-        user.addAddress(address);
+
+
+        var profile = Profile.builder()
+                        .bio("bio")
+                                .build();
+
+        user.setProfile(profile);
+        profile.setUser(user);
+
+
+
+
+
+
 
         System.out.println(user);
 
