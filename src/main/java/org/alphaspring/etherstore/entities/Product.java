@@ -1,31 +1,35 @@
 package org.alphaspring.etherstore.entities;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import java.math.BigDecimal;
 
-@Entity
-@Table(name = "products")
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-@ToString
+@Entity
+@Table(name = "products")
 public class Product {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id; // Long maps to BIGINT
+    @Column(name = "id")
+    private Long id;
 
-    @Column(nullable = false, name = "name")
+    @Column(name = "name")
     private String name;
+    @Column(name = "description")
+    private String description;
 
-    @Column(nullable = false, precision = 10, scale = 2, name = "price")
-    private BigDecimal price; // BigDecimal is best practice for monetary/DECIMAL fields
+    @Column(name = "price")
+    private BigDecimal price;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
+
     @JoinColumn(name = "category_id")
     private Category category;
+
+
 }
