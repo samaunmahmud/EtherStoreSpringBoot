@@ -5,23 +5,6 @@ spring:
     url: jdbc:mysql://localhost:3307/store?createDatabaseIfNotExist=true
     username: root
     password: root
-  flyway:
-    baseline-on-migrate: true
+  jpa:
+    show-sql: true
 
-
-
-
-stripe:
-  apiUrl: https://api.stripe.com
-  enabled: true
-  timeout: 1000
-  supported-currencies: USD, EUR, GBP
-
-
-payment-gateway: PayPal
-
-
-
-mail:
-  host: https://spring_boot.gmail.com
-  port: 3307
